@@ -1,11 +1,11 @@
 <html>
 <head>
-  <title>Barry</title>
+  <title>Mechy</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript">
-    var accessToken = "dafc86bb648b4deca941ac934deda6e2",
-      subscriptionKey = "4c62f0fa-adf8-4ec0-ba8b-098271ca3361",
+    var accessToken = "e5c1072471d44a3a932deeb18499caf8",
+      subscriptionKey = "447702d8ae284fc28292c0759044965f",
       baseUrl = "https://api.api.ai/v1/",
       $speechInput,
       $recBtn,
@@ -92,6 +92,7 @@
         data: JSON.stringify({q: text, lang: "en"}),
         success: function(data) {
           prepareResponse(data);
+          //console.log("hello");
         },
         error: function() {
           respond(messageInternalError);
@@ -99,27 +100,53 @@
       });
     }
     function prepareResponse(val) {
-      var debugJSON = JSON.stringify(val, undefined, 2),
-        spokenResponse = val.result.speech;
-      respond(spokenResponse);
-      debugRespond(debugJSON);
+  var debugJSON = JSON.stringify(val, undefined, 2);
+
+    //var spokenResponse = val.result.fulfillment.speech;
+    //respond(spokenResponse);
+  /*if (val.result.action == "search") {
+    requestSleepData("overheating");
+}*/
+
+debugRespond(debugJSON);
+}
+
+function debugRespond(val) {
+  $("#response").text(val);
+  obj = JSON.parse(val);
+  var temp = obj.result.parameters["Problem-type"];
+  console.log(obj.result.parameters["Problem-type"]);
+
+  var text2 = '{"Mechy":[' +
+  '{"ProblemType":"overheating","Tools":"Engine oil, Antifreeze, coolant, gloves","Procedure":"Turn off the engine immediately and pop the car hood. Let the engine cool down before taking any action. Check the engine oil level using the dipstick and the cap, the oil should reach the notch marked Full. Check the coolant levels in the reservoir by the radiator. If the coolant reads low, it might be a leak. If there is a leak, take your car to a mechanic. "},'+
+  '{"ProblemType":"stuck in the mud","Tools":"oil", "Procedure":"First put the car in first gear and gently press the accelerator. Keep it at 15 miles per hour and allow the spinning wheels to rock the vehicle forward. Take your foot off the accelerator and let the vehicle roll backwards and immediately put your foot on the accelerator to move the car forwards again. Keep doing this to gain enough momentum to rock the vehicle out of the mud. If it does not work, you will need towing."}]}';
+
+  obj1 = JSON.parse(text2);
+  console.log(obj1.Mechy[0].ProblemType);
+  var i=0;
+  while(i<=1){
+    if(obj1.Mechy[i].ProblemType == temp){
+      respond("Okay. displaying the tools");
+      respond(obj1.Mechy[i].Tools);
     }
-    function debugRespond(val) {
-      $("#response").text(val);
-    }
-    function respond(val) {
-      if (val == "") {
-        val = messageSorry;
-      }
-      if (val !== messageRecording) {
-        var msg = new SpeechSynthesisUtterance();
-        msg.voiceURI = "native";
-        msg.text = val;
-        msg.lang = "en-US";
-        window.speechSynthesis.speak(msg);
-      }
-      $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
-    }
+    i++;
+  }
+  //console.log(temp);
+}
+
+function respond(val) {
+  if (val == "") {
+    val = messageSorry;
+  }
+  if (val !== messageRecording) {
+    var msg = new SpeechSynthesisUtterance();
+    msg.voiceURI = "native";
+    msg.text = val;
+    msg.lang = "en-US";
+    window.speechSynthesis.speak(msg);
+  }
+  $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
+}
   </script>
   <style type="text/css">
     html {
