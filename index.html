@@ -110,12 +110,11 @@
 
 debugRespond(debugJSON);
 }
-
+var temp;
+var k=0;
 function debugRespond(val) {
   $("#response").text(val);
   obj = JSON.parse(val);
-  var temp = obj.result.parameters["Problem-type"];
-  console.log(obj.result.parameters["Problem-type"]);
 
   var text2 = '{"Mechy":[' +
   '{"ProblemType":"overheating","Tools":"Engine oil, Antifreeze, coolant, gloves","Procedure":"Turn off the engine immediately and pop the car hood. Let the engine cool down before taking any action. Check the engine oil level using the dipstick and the cap, the oil should reach the notch marked Full. Check the coolant levels in the reservoir by the radiator. If the coolant reads low, it might be a leak. If there is a leak, take your car to a mechanic."},'+
@@ -140,26 +139,114 @@ function debugRespond(val) {
   '{"ProblemType":"ABS light","Tools":"","Procedure":"There is a fault in the anti-lock brake system. You can drive the vehicle and operate the brakes. But exercise more caution on slippery roads. Get the problem checked out soon."},'+
   '{"ProblemType":"High Temperature","Tools":"","Procedure":"Pull over at the nearest safe spot and turn off the engine. Do not open the radiator or the coolant reservoir. Have the vehicle immediately towed to a repair shop. Driving an overheated vehicle can cause serious engine damage costing thousands of dollars to repair."}]}';
 
-  obj1 = JSON.parse(text2);
-  console.log(obj1.Mechy[20].ProblemType);
-  var i=0;
-  while(i<=20)
+
+  //var temp;
+  if(obj.result.action == "search")
   {
-    if(obj1.Mechy[i].ProblemType == temp)
+    temp = obj.result.parameters["Problem-type"];
+    console.log(obj.result.parameters["Problem-type"]);
+
+    obj1 = JSON.parse(text2);
+    //console.log(obj1.Mechy[0].ProblemType);
+    var i=0;
+    while(i<=20)
     {
-      if(obj1.Mechy[i].Tools == "")
+      if(obj1.Mechy[i].ProblemType == temp)
       {
-        respond("Okay. You don't need any tools for this. Moving on to the procedure.");
+        if(obj1.Mechy[i].Tools == "")
+        {
+          respond("Okay. You don't need any tools for this. Moving on to the procedure.");
+          respond(obj1.Mechy[i].Procedure.split(".",1));
+        }
+        else
+        {
+          respond("Okay. Displaying the tools");
+          respond(obj1.Mechy[i].Tools.split(",",1));
+        }
       }
-      else
-      {
-        respond("Okay. Displaying the tools");
-        respond(obj1.Mechy[i].Tools);
-      }
+      i++;
     }
-    i++;
+    //console.log(temp);
   }
-  //console.log(temp);
+  if(obj.result.action == "toolsearch")
+  {
+    var tool = obj.result.parameters["ToolType"];
+    //var k=1;
+    console.log(temp);
+
+    obj2 = JSON.parse(text2)
+    var i=0;
+    while(i<=20)
+    {
+      if(obj2.Mechy[i].ProblemType == temp)
+      {
+        if(obj2.Mechy[i].Tools == "")
+        {
+          respond("Okay. You don't need any tools for this. Moving on to the procedure.");
+
+          respond(obj2.Mechy[i].Procedure.split(".",1));
+        }
+        else
+        {
+
+          if(tool == "next")
+          {
+            k++;
+
+            var values = obj2.Mechy[i].Tools.split(",");
+
+            if(k == values.length-1)
+            {
+              respond("This is the last tool you will need.");
+            }
+            respond(values[k]);
+
+            //k++;
+          }
+          else if(tool == "repeat")
+          {
+            var values = obj2.Mechy[i].Tools.split(",");
+            respond(values[k]);
+          }
+        }
+
+      }
+      i++;
+    }
+  }
+/*
+  if(obj.result.action == "proceduresearch")
+  {
+    var tool = obj.result.parameters["ToolType"];
+    //var k=1;
+    console.log(temp);
+
+    obj2 = JSON.parse(text2)
+    var i=0;
+    while(i<=20)
+    {
+      if(obj2.Mechy[i].ProblemType == temp)
+      {
+
+
+          if(tool == "next")
+          {
+            k++;
+            var values = obj2.Mechy[i].Procedure.split(".");
+            respond(values[k]);
+            //k++;
+          }
+          else if(tool == "repeat")
+          {
+            var values = obj2.Mechy[i].Procedure.split(",");
+            respond(values[k]);
+          }
+
+      }
+      i++;
+    }
+  }
+  */
 }
 
 function respond(val) {
