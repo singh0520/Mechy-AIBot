@@ -15,6 +15,7 @@
       messageInternalError = "Oh no, there has been an internal server error",
       messageSorry = "I'm sorry, I don't have the answer to that yet.";
     $(document).ready(function() {
+      respond("Hi, I am Mechy, your vehicle Repair Bot. Ask me your car problem and I'll look for a solution.");
       $speechInput = $("#speech");
       $recBtn = $("#rec");
       $speechInput.keypress(function(event) {
@@ -100,6 +101,7 @@
       });
     }
     function prepareResponse(val) {
+
   var debugJSON = JSON.stringify(val, undefined, 2);
 
     //var spokenResponse = val.result.fulfillment.speech;
@@ -117,6 +119,7 @@ var l=1;
 var toolsEmpty=0;
 var finishedTraversing;
 function debugRespond(val) {
+
   $("#response").text(val);
   obj = JSON.parse(val);
 
@@ -318,7 +321,8 @@ function debugRespond(val) {
   */
 }
 
-function respond(val) {
+function respond(val)
+{
   if (val == "") {
     val = messageSorry;
   }
