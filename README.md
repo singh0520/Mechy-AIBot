@@ -16,9 +16,6 @@ Apache server installed to run it on localhost
 
 On an Unix/ macOS machine, run the following in terminal to start the server
 
-sudo apachectl start
-
-
 ```
 sudo apachectl start
 ```
