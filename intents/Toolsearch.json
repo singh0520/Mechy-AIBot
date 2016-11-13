@@ -1,0 +1,134 @@
+{
+  "id": "05abbf81-ceda-42c8-8bea-6f92f5304b95",
+  "name": "Toolsearch",
+  "auto": true,
+  "contexts": [],
+  "userSays": [
+    {
+      "id": "23d5d76d-0f20-456c-9df2-62c928485823",
+      "data": [
+        {
+          "text": "I "
+        },
+        {
+          "text": "did not get you",
+          "alias": "ToolType",
+          "meta": "@ToolType",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5ea4c6f6-f6c4-40b7-bd8e-25681822029c",
+      "data": [
+        {
+          "text": "Could you please "
+        },
+        {
+          "text": "repeat",
+          "alias": "ToolType",
+          "meta": "@ToolType",
+          "userDefined": true
+        },
+        {
+          "text": " that"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "2079138a-e423-4255-90f1-878cc7f7ed9d",
+      "data": [
+        {
+          "text": "yeah",
+          "alias": "ToolType",
+          "meta": "@ToolType",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "59b4d29a-89ce-4ceb-840b-5b36a63e8ea3",
+      "data": [
+        {
+          "text": "yup",
+          "alias": "ToolType",
+          "meta": "@ToolType",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c81f11e3-4a6f-4412-b166-115e4879683d",
+      "data": [
+        {
+          "text": "yes",
+          "alias": "ToolType",
+          "meta": "@ToolType",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "aad490af-2ec3-4c8e-ac3c-016f75d571ba",
+      "data": [
+        {
+          "text": "next",
+          "alias": "ToolType",
+          "meta": "@ToolType",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "747798fa-37cb-4aac-b8da-fd4eb413d547",
+      "data": [
+        {
+          "text": "next",
+          "alias": "ToolType",
+          "meta": "@ToolType",
+          "userDefined": true
+        },
+        {
+          "text": " one"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "toolsearch",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "dataType": "@ToolType",
+          "name": "ToolType",
+          "value": "$ToolType"
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "fallbackIntent": false
+}

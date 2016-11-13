@@ -1,0 +1,887 @@
+{
+  "id": "fe9269e8-3f98-4ca0-b378-a0fb88b38245",
+  "name": "Solution-search",
+  "auto": true,
+  "contexts": [],
+  "userSays": [
+    {
+      "id": "ee349b1d-9afa-44cb-b050-5b6cb4f567c7",
+      "data": [
+        {
+          "text": "My car has a high "
+        },
+        {
+          "text": "temperature",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f663be51-8aa4-412a-94a9-542b240955d3",
+      "data": [
+        {
+          "text": "My car\u0027s "
+        },
+        {
+          "text": "temperature",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " is getting high"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "937130fb-4166-4197-9722-2f2bf8392ead",
+      "data": [
+        {
+          "text": "My car\u0027s "
+        },
+        {
+          "text": "ABS light",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " is on"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "0f7a3598-8c81-48f4-a96c-a9497857cc78",
+      "data": [
+        {
+          "text": "My car\u0027s "
+        },
+        {
+          "text": "charging system light",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " is on"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c6052f89-a66a-4502-a1a4-0e55b83085a6",
+      "data": [
+        {
+          "text": "My car\u0027s "
+        },
+        {
+          "text": "check engine light",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " is on"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5def2047-76db-4418-a8b8-6da5cf972ebe",
+      "data": [
+        {
+          "text": "My car\u0027s "
+        },
+        {
+          "text": "traction control light",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " is on"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "3f8d3e20-4b2c-424f-a798-c15adf687e41",
+      "data": [
+        {
+          "text": "My car\u0027s "
+        },
+        {
+          "text": "airbag light",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " is on"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "a12e5e41-6b10-4d81-bda5-c9fdfc762bbc",
+      "data": [
+        {
+          "text": "My car\u0027s "
+        },
+        {
+          "text": "brake light",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " is on"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ff989106-6e2f-4587-999a-bd3620cb7e72",
+      "data": [
+        {
+          "text": "My car\u0027s "
+        },
+        {
+          "text": "oil light",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " is on"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "677cae96-cbf9-4f42-b397-462ce0b7fbe2",
+      "data": [
+        {
+          "text": "My car\u0027s "
+        },
+        {
+          "text": "coolant",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " reads low"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "2632f8da-54ce-41a0-a5c4-eed29361acf0",
+      "data": [
+        {
+          "text": "My car is "
+        },
+        {
+          "text": "stalling",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "664868da-b54b-4a9a-9ca0-28152527e5b4",
+      "data": [
+        {
+          "text": "Black",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " smokes are coming out of my car\u0027s tailpipe"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "e85444cd-a163-46f5-94c8-58b587fef895",
+      "data": [
+        {
+          "text": "Blue",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " smokes are coming out of my car\u0027s tailpipe"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "937c3e6b-c49d-4442-b979-50dbc5728d40",
+      "data": [
+        {
+          "text": "White",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " smokes are coming out of my car\u0027s "
+        },
+        {
+          "text": "tailpipe",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "7cc43c11-b90f-4ba0-a84e-42d5840e4759",
+      "data": [
+        {
+          "text": "My car is "
+        },
+        {
+          "text": "not starting",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "43891d19-bd07-48f2-b177-c4a57c923d2a",
+      "data": [
+        {
+          "text": "My car is making a "
+        },
+        {
+          "text": "whining noise",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "7d06b9af-f45d-4e10-b215-a70c0d121af8",
+      "data": [
+        {
+          "text": "My car is having difficulty "
+        },
+        {
+          "text": "accelerating",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "9e121f54-1d1a-42b1-b434-723c2262654c",
+      "data": [
+        {
+          "text": "I have a "
+        },
+        {
+          "text": "cracked windshield",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "cab44896-31f4-41ba-862c-bb63b7283610",
+      "data": [
+        {
+          "text": "My car\u0027s "
+        },
+        {
+          "text": "battery",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " seems to be dead."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "18b0d331-a6ef-45a0-a053-8feffa44f685",
+      "data": [
+        {
+          "text": "My car has a "
+        },
+        {
+          "text": "dead battery",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "52d0a21d-807c-45a9-8384-1cf656613d78",
+      "data": [
+        {
+          "text": "Due to "
+        },
+        {
+          "text": "overheating",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "car\u0027s",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " cooling is ineffective now!"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "4fbdc590-16dd-42b0-9488-4121bee66e98",
+      "data": [
+        {
+          "text": "Car\u0027s",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " cooling is not working properly, due to "
+        },
+        {
+          "text": "overheating",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": "."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "48785993-3a7c-40b3-b99c-a3e1300da23b",
+      "data": [
+        {
+          "text": "Due to "
+        },
+        {
+          "text": "overheating",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": ", "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is not starting"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "8f2d8666-5a13-46a3-9e67-a377458defe3",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is facing problem of "
+        },
+        {
+          "text": "overheating",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": "."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "270b9607-fde8-4d20-8cb6-c4073d02c4dc",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is "
+        },
+        {
+          "text": "heating",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " up very fast."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "e47d98a9-05bb-4ec7-8b8f-1bce23cb72c8",
+      "data": [
+        {
+          "text": "Due to "
+        },
+        {
+          "text": "overheating",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": ", my "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is not working properly."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c8015250-050a-4810-8e8c-5495b3dc635d",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is not moving due to "
+        },
+        {
+          "text": "overheating",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": "."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "58edde82-6d8e-464f-b08c-d9ca4d479c61",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " has "
+        },
+        {
+          "text": "overheated",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": "."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "bdfb0b72-e07a-46f7-901d-f44cf03071aa",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is starting to "
+        },
+        {
+          "text": "overheat",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": "."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ac90ee4c-35ba-4dcf-a6ab-3867324312d7",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " has started "
+        },
+        {
+          "text": "overheating",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": "."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "830c4ea5-6f4d-47c0-82b7-035a2aaa7dd2",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " tires are "
+        },
+        {
+          "text": "in the mud.",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ab7951b8-123b-4c02-97e8-0a6c65fd69b5",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " just got "
+        },
+        {
+          "text": "stuck in the mud.",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "336e3e3f-0d80-46cb-9cc4-e312c9408d27",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " tires are "
+        },
+        {
+          "text": "jammed in the mud.",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "e29850d6-25f5-4a4c-b42e-ca76169aecea",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " tires are all "
+        },
+        {
+          "text": "packed in the mud",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5974981e-0fa5-4a74-a2b7-da9a0dffa61b",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is not moving forward because it got "
+        },
+        {
+          "text": "stuck in the mud",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "00bf3557-880f-4609-91b0-2fe90ef3c036",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is "
+        },
+        {
+          "text": "stuck in the mud",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "4a64c11a-6d56-4248-a9ae-93c4f2ce72c1",
+      "data": [
+        {
+          "text": "Due to "
+        },
+        {
+          "text": "overheating",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": ", my "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " is not moving."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "9d6bf6ec-8162-4a3b-bf93-89ffcf71c9ae",
+      "data": [
+        {
+          "text": "My "
+        },
+        {
+          "text": "motorcycle",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " has a "
+        },
+        {
+          "text": "flat tire",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": "."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "9b212f67-29f4-4350-8ba8-1b1477b173ee",
+      "data": [
+        {
+          "text": "my "
+        },
+        {
+          "text": "car",
+          "meta": "@sys.ignore",
+          "userDefined": true
+        },
+        {
+          "text": " has started "
+        },
+        {
+          "text": "overheating",
+          "alias": "Problem-type",
+          "meta": "@Problem-type",
+          "userDefined": true
+        },
+        {
+          "text": " very fast."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "search",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@Problem-type",
+          "name": "Problem-type",
+          "value": "$Problem-type",
+          "prompts": [
+            "What kind of problem are you facing?"
+          ],
+          "isList": true
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "Okay, I\u0027ll search for a solution.",
+            "Searching",
+            "Hold on, let me search"
+          ]
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "fallbackIntent": false
+}

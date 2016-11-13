@@ -1,0 +1,179 @@
+{
+  "id": "a475621a-bb98-40cb-bf1c-fbb225cc93f9",
+  "name": "Problem-type",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "overheating",
+      "synonyms": [
+        "overheating",
+        "heating",
+        "getting hot",
+        "heated",
+        "heated up",
+        "hot",
+        "engine is overheating",
+        "overheat",
+        "overheated"
+      ]
+    },
+    {
+      "value": "stuck in the mud",
+      "synonyms": [
+        "stuck in the mud",
+        "stuck",
+        "packed in the mud",
+        "jammed in the mud",
+        "in the mud"
+      ]
+    },
+    {
+      "value": "flat tire",
+      "synonyms": [
+        "flat tire",
+        "tire puncture",
+        "burst tire"
+      ]
+    },
+    {
+      "value": "dead battery",
+      "synonyms": [
+        "dead battery",
+        "battery is dead"
+      ]
+    },
+    {
+      "value": "cracked windshield",
+      "synonyms": [
+        "cracked windshield",
+        "cracked glass",
+        "windshield",
+        "cracked"
+      ]
+    },
+    {
+      "value": "difficulty accelerating",
+      "synonyms": [
+        "difficulty accelerating",
+        "not accelerating",
+        "acceleration problems",
+        "accelerating"
+      ]
+    },
+    {
+      "value": "whining noise",
+      "synonyms": [
+        "whining sounds",
+        "noises",
+        "strange sounds",
+        "noise",
+        "sounds",
+        "strange"
+      ]
+    },
+    {
+      "value": "not starting",
+      "synonyms": [
+        "not starting",
+        "dying soon"
+      ]
+    },
+    {
+      "value": "tailpipe is smoking white",
+      "synonyms": [
+        "white smoke from tailpipe",
+        "white smoke",
+        "tailpipe white smokes",
+        "white"
+      ]
+    },
+    {
+      "value": "stalling",
+      "synonyms": [
+        "stalling",
+        "sluggishness",
+        "sluggish"
+      ]
+    },
+    {
+      "value": "coolant reads low",
+      "synonyms": [
+        "coolant reads low",
+        "coolant shows low",
+        "coolant indicates low",
+        "coolant"
+      ]
+    },
+    {
+      "value": "oil light",
+      "synonyms": [
+        "oil light"
+      ]
+    },
+    {
+      "value": "brake light",
+      "synonyms": [
+        "brake light"
+      ]
+    },
+    {
+      "value": "airbag light",
+      "synonyms": [
+        "airbag light",
+        "SRS light"
+      ]
+    },
+    {
+      "value": "traction control light",
+      "synonyms": [
+        "traction control light",
+        "stability control light"
+      ]
+    },
+    {
+      "value": "check engine light",
+      "synonyms": [
+        "check engine light"
+      ]
+    },
+    {
+      "value": "charging system light",
+      "synonyms": [
+        "charging system light"
+      ]
+    },
+    {
+      "value": "ABS light",
+      "synonyms": [
+        "ABS light"
+      ]
+    },
+    {
+      "value": "High Temperature",
+      "synonyms": [
+        "High Temperature",
+        "temperature",
+        "high"
+      ]
+    },
+    {
+      "value": "tailpipe is smoking blue",
+      "synonyms": [
+        "tailpipe is smoking blue",
+        "blue smoke from tailpipe, tailpipe blue smokes",
+        "blue"
+      ]
+    },
+    {
+      "value": "tailpipe is smoking black",
+      "synonyms": [
+        "tailpipe is smoking black",
+        "black smokes",
+        "black smoke from tailpipe, black smoke, black smoke from tailpipe",
+        "black"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

@@ -1,0 +1,36 @@
+{
+  "id": "63edbd6b-e41d-4e30-94d8-2fcc603590e4",
+  "name": "ProcedureType",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "next",
+      "synonyms": [
+        "next",
+        "got it",
+        "yes",
+        "yup",
+        "done",
+        "yeah",
+        "go on",
+        "have it",
+        "hmm",
+        "alright"
+      ]
+    },
+    {
+      "value": "repeat",
+      "synonyms": [
+        "repeat",
+        "say it again",
+        "did not get you",
+        "sorry",
+        "what was that",
+        "pardon",
+        "could not hear you"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

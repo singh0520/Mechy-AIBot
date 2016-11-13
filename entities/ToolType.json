@@ -1,0 +1,37 @@
+{
+  "id": "81f6428b-3c4a-4572-a3c3-730e0e0e4516",
+  "name": "ToolType",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "next",
+      "synonyms": [
+        "next",
+        "got it",
+        "yes",
+        "yup",
+        "done",
+        "yeah",
+        "go on",
+        "have it",
+        "hmm",
+        "alright",
+        "okay"
+      ]
+    },
+    {
+      "value": "repeat",
+      "synonyms": [
+        "repeat",
+        "say it again",
+        "did not get you",
+        "sorry",
+        "what was that",
+        "pardon",
+        "could not hear you"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}
