@@ -429,7 +429,11 @@ function respond(val)
 	
 	h1 { color: #D8D8D8; font-family: 'Righteous', Bold; font-size: 65px; font-weight: normal; line-height: 60px; margin: 10px 0 20px; text-transform: uppercase; text-shadow: 2px 2px 0 #000, margin: 10px 0 24px; text-align: center; }
 	
-   p{     background-color: #126077;
+   p{
+      bottom: 0;
+      position: fixed;
+      left: 0;
+	  background-color: #126077;
       border: 1px solid #3F7F93;
       color: #A6CAE6;
       font-family: "Titillium Web";
@@ -443,8 +447,7 @@ function respond(val)
 </head>
 <body>
 <br>
-<b><h1>MECHY</h1></b>
-
+<h1>MECHY</h1>
   <div class="container">
     <input id="speech" type="text">
     <button id="rec" class="btn">Speak</button>
@@ -462,9 +465,10 @@ function respond(val)
   </div>
 
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200" rel="stylesheet" type="text/css">
-  <p>
+ <p>
 Ask things like:<br/>
-My car is not starting
+My car is not starting.
 </p>
+
 </body>
 </html>
