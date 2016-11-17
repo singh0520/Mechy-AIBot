@@ -4,7 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript">
-    var accessToken = "e5c1072471d44a3a932deeb18499caf8",
+    var accessToken = "2490a8f7166b48d0890c7bb9cd529731",
       subscriptionKey = "447702d8ae284fc28292c0759044965f",
       baseUrl = "https://api.api.ai/v1/",
       $speechInput,
@@ -15,7 +15,7 @@
       messageInternalError = "Oh no, there has been an internal server error",
       messageSorry = "I'm sorry, I don't have the answer to that yet.";
     $(document).ready(function() {
-      respond("Hi, I am Mechy, your vehicle Repair Bot. Ask me your car problem and I'll look for a solution.");
+      respond("Hi, I am Mecchy, your vehicle Repair Bot! Ask me your car problem and I'll look for a solution.");
       $speechInput = $("#speech");
       $recBtn = $("#rec");
       $speechInput.keypress(function(event) {
@@ -90,7 +90,7 @@
           "Authorization": "Bearer " + accessToken,
           "ocp-apim-subscription-key": subscriptionKey
         },
-        data: JSON.stringify({q: text, lang: "en"}),
+        data: JSON.stringify({q: text, lang: "en", sessionId: "07e4728f-85c2-413c-b2c2-2b369f4dd4a5" }),
         success: function(data) {
           prepareResponse(data);
           //console.log("hello");
@@ -104,11 +104,6 @@
 
   var debugJSON = JSON.stringify(val, undefined, 2);
 
-    //var spokenResponse = val.result.fulfillment.speech;
-    //respond(spokenResponse);
-  /*if (val.result.action == "search") {
-    requestSleepData("overheating");
-}*/
 
 debugRespond(debugJSON);
 }
@@ -168,12 +163,14 @@ function debugRespond(val) {
         }
         else
         {
-          respond("Okay. Displaying the tools");
+          respond("Found it. Displaying the tools");
           respond(obj1.Mechy[i].Tools.split(",",1));
           toolsEmpty=0;
         }
       }
       i++;
+
+
     }
     //console.log(temp);
   }
@@ -286,39 +283,6 @@ function debugRespond(val) {
       }
     //}
   }
-/*
-  if(obj.result.action == "proceduresearch")
-  {
-    var tool = obj.result.parameters["ToolType"];
-    //var k=1;
-    console.log(temp);
-
-    obj2 = JSON.parse(text2)
-    var i=0;
-    while(i<=20)
-    {
-      if(obj2.Mechy[i].ProblemType == temp)
-      {
-
-
-          if(tool == "next")
-          {
-            k++;
-            var values = obj2.Mechy[i].Procedure.split(".");
-            respond(values[k]);
-            //k++;
-          }
-          else if(tool == "repeat")
-          {
-            var values = obj2.Mechy[i].Procedure.split(",");
-            respond(values[k]);
-          }
-
-      }
-      i++;
-    }
-  }
-  */
 }
 
 function respond(val)
@@ -344,7 +308,7 @@ function respond(val)
       box-sizing: inherit;
     }
     body {
-      background-color: #3A4750;
+      background-color: #bed8e8;
       font-family: "Titillium Web", Arial, sans-serif;
       font-size: 20px;
       margin: 0;
@@ -356,7 +320,7 @@ function respond(val)
       -webkit-transform: translate(-50%, -50%);
     }
     input {
-      background-color: #126077;
+      background-color: #003865;
       border: 1px solid #3F7F93;
       color: #A6CAE6;
       font-family: "Titillium Web";
@@ -378,7 +342,7 @@ function respond(val)
       outline: 1px solid #48788B;
     }
     .btn {
-      background-color: #126178;
+      background-color: #003865;
       border: 1px solid #549EAF;
       color: #549EAF;
       cursor: pointer;
@@ -426,14 +390,14 @@ function respond(val)
       color: #7584A2;
       padding: 1em;
     }
-	
-	h1 { color: #D8D8D8; font-family: 'Righteous', Bold; font-size: 65px; font-weight: normal; line-height: 60px; margin: 10px 0 20px; text-transform: uppercase; text-shadow: 2px 2px 0 #000, margin: 10px 0 24px; text-align: center; }
-	
+
+	h1 { color: #002f4c; font-family: 'Righteous', Bold; font-size: 65px; font-weight: normal; line-height: 60px; margin: 10px 0 20px; text-transform: uppercase; text-shadow: 2px 2px 0 #000, margin: 10px 0 24px; text-align: center; }
+
    p{
       bottom: 0;
       position: fixed;
       left: 0;
-	  background-color: #126077;
+	    background-color: #003865;
       border: 1px solid #3F7F93;
       color: #A6CAE6;
       font-family: "Titillium Web";
@@ -442,7 +406,7 @@ function respond(val)
       padding: 0 0.75em;
       width: 400px;
       -webkit-transition: all 0.35s ease-in;}
-	
+
   </style>
 </head>
 <body>
@@ -455,19 +419,21 @@ function respond(val)
       <div class="spoken-response__text"></div>
     </div>
   </div>
-  <div class="debug">
+  <!--<div class="debug">
     <div class="debug__btn btn">
-      Debug JSON results
+      JSON results
     </div>
     <div class="debug__content">
       <textarea id="response" cols="40" rows="20"></textarea>
     </div>
-  </div>
+  </div>-->
 
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200" rel="stylesheet" type="text/css">
  <p>
-Ask things like:<br/>
-My car is not starting.
+You can ask things like:<br/>
+My car is getting overheated very fast.</br>
+My car is stuck in the mud.</br>
+Navigate the tools and procedures by saying "Next" or "Please Repeat".
 </p>
 
 </body>
