@@ -15,7 +15,9 @@
       messageInternalError = "Oh no, there has been an internal server error",
       messageSorry = "I'm sorry, I don't have the answer to that yet.";
     $(document).ready(function() {
-      respond("Hi, I am Mecchy, your vehicle Repair Bot! Ask me your car problem and I'll look for a solution.");
+      respond("Hi, I am Mecchy! Ask me your car problem and I'll look for a solution.");
+      //your vehicle Repair Bot! Ask me your car problem and I'll look for a solution. You can start by saying my car has started over heating or my car got stuck in a mud and like wise.
+      //respond("You start by saying my car has started over heating or my car got stuck in a mud and like wise.");
       $speechInput = $("#speech");
       $recBtn = $("#rec");
       $speechInput.keypress(function(event) {
@@ -77,7 +79,7 @@
       send();
     }
     function updateRec() {
-      $recBtn.text(recognition ? "Stop" : "Speak");
+      $recBtn.text(recognition ? "Listening..." : "Speak");
     }
     function send() {
       var text = $speechInput.val();
@@ -108,42 +110,47 @@
 debugRespond(debugJSON);
 }
 var temp;
+var q;
 var k=0;
 var j=-1;
 var l=1;
 var toolsEmpty=0;
 var finishedTraversing;
 function debugRespond(val) {
-
+  
   $("#response").text(val);
   obj = JSON.parse(val);
 
   var text2 = '{"Mechy":[' +
-  '{"ProblemType":"overheating","Tools":"Engine oil, Antifreeze, coolant, gloves","Procedure":"Turn off the engine immediately and pop the car hood. Great, let the engine cool down before taking any action. Okay, check the engine oil level using the dipstick and the cap, the oil should reach the notch marked full. Good job, check the coolant levels in the reservoir by the radiator. If the coolant reads low, it might be a leak. If there is a leak, take your car to a mechanic."},'+
-  '{"ProblemType":"stuck in the mud","Tools":"Metallic lever", "Procedure":"First put the car in first gear and gently press the accelerator. Then, keep it at 15 miles per hour and allow the spinning wheels to rock the vehicle forward. You are doing good, take your foot off the accelerator and let the vehicle roll backwards and immediately put your foot on the accelerator to move the car forwards again. Keep doing this to gain enough momentum to rock the vehicle out of the mud. If it does not work, you will need towing."},'+
-  '{"ProblemType":"flat tire","Tools":"Lug wrench, Jack, Spare Tire, Brick","Procedure":"First, park your car and make sure it isn’t moving. Don’t forget to engage your emergency brake. Okay, place the brick behind the healthy tire opposite the dead one to keep the car from rolling. Good, now remove the hubcap, behind which you’ll see the lug nuts. Use your wrench to release them slightly, making sure to keep the nuts attached to your tires at this time. Now, when your car is secure and the lug nuts are exposed, situate your jack beneath the car body. While the positioning for this could vary, the jack should be against the car with no risk of falling. Lift your vehicle to reach the wheels, be carefull. Only once you’re ready to remove the flat tire should the lug nuts come off. Without these, you can easily get the wheel off the vehicle so you can replace it with a new one. Make sure that the old tire is on its side, then dispose of it. Very good, put the new tire on the car and secure the lug nuts. The nuts should be tightened on alternating opposite sides, so tires with five lug nuts would be tightened following a star shape pattern, starting at the top, moving diagonally lower and so on. Finally, once you release the jack and the car is on the ground, give the lug nuts a second look and maybe even another tightening with the wrench."},'+
-  '{"ProblemType":"dead battery","Tools":"Jumper cables, Another car nearby","Procedure":"Keep cables intact and unbent at all times to prevent accidental shocks. Make sure that the second car parks with its front hood near your vehicle. Under each hood, you will find terminals marked negative and positive, typically denoted with a minus or plus sign. First make sure both vehicles are OFF. Connect the positive (typically red) cables to both positive terminals, starting with the dead battery first. Connect the negative (typically black) cable to the negative terminal on the battery of the car that is providing the jump. Connect the other end of the negative cable to an unpainted metal surface elsewhere under the hood of the car that is being jumped (but away from the battery). Let the battery charge for at least five minutes. After five minutes, see whether the car starts. If it doesn’t, let it charge for a few more minutes and try again. Once you can start the car without issue, make sure to retrieve all cables in this order: First, start with the grounded end of the negative cable clamped to the unpainted metal surface. Then, move on to the negative terminal of the car that provided the jump. Next, continue to the positive terminal of the car that provided the jump. Finally, end with the positive terminal of the car that received the jump."},'+
-  '{"ProblemType":"cracked windshield","Tools":"A razor blade, Curing strips, Resin or putty","Procedure":"The resin collector, pressure tube and suction cups are not needed for this fix so just break out your resin dispensor and lets get to work. Very slowly drip resin into the cracked area on your windshield. Dispense the resin extremely slowly (meaing about a drop every 3 seconds). Now, step back and look at the crack from multiple angles to see dark areas filling with the resin. Wait about 5 or 10 minutes and see if there are any air bubbles left in the crack. If there are, apply pressure to the inside of the windshield until all the bubbles are gone. Be carefull though you do not want to make the crack worse. Keep applying more resin and repeating this step until the crack is completely filled and contains no air bubbles. After you completed step 1 reapply more resin the crack while placing your curing strips on top of the crack while leaving no air under them. Once again, do not apply pressure to the strips just make sure they are completely covering the crack. Use your razor blade to remove any excess resin scraping at a right degree angle until all the excess resin is removed. After you are done applying the resin, curing strips and removing the excess resin, put the car directly in sun light to dry. Should take about 5 or 10 minutes. After the resin is dry remove the strips. Use your razor blade to remove any excess resin scraping at a 90 degree angle until all the excess resin is removed."},'+
-  '{"ProblemType":"difficulty accelerating","Tools":"Fuel Pressor Sensor","Procedure":"Just disconnect your fuel pressure sensor and try again"},'+
-  '{"ProblemType":"whining noise","Tools":"Fuel Pressor Sensor","Procedure":"You only need to disconnect your fuel pressure sensor"},'+
-  '{"ProblemType":"not starting","Tools":"Fuel Pressor Sensor","Procedure":"You should only disconnect your fuel pressure sensor"},'+
-  '{"ProblemType":"tailpipe is smoking black","Tools":"Spark Plugs","Procedure":"Warm up your car. Now, change the spark plugs. If there is still smoke, there is problem wit the fuel system. Have a mechanic look at it. "},'+
-  '{"ProblemType":"tailpipe is smoking blue","Tools":"New PCV Valve","Procedure":"Replace the PCV valve, it is faulty. If the car is not turbocharged, the problem lies with the engine oil seals. You need a mechanic for this, mate."},'+
-  '{"ProblemType":"tailpipe is smoking white","Tools":"Cylinder head gasket","Procedure":"Warm up your car. If coolant level does not reads low, it is just steam. Drive for 30 min and it should go away, else fill up your coolant reservoir and check the level again after a day. If it is still low, your cylinder head gasket is faulty and you should call a mechanic."},'+
-  '{"ProblemType":"stalling","Tools":"Air filters","Procedure":"Make sure your fuel and air filters are tight. You might want to change these out every so often to keep the fuel intake system healthy. Too much fluid there can cause stalling. Check for leaks underneath your car when you park it. If you see these, they’re likely attributed to your vacuum system. The fluid lines may have been punctured or they just may need to be tightened. If you notice the lines making a hissing sound while you are idling, it is an indication you may have a leak in your vacuum system."},'+
-  '{"ProblemType":"coolant reads low","Tools":"Radiator","Procedure":"Shut off your air conditioner and open your windows immediately. If this does not cause the gauge to go down, turn on the heater as high as it can go. If this still is not working, pull over on the side of the road, open the hood carefully, and wait until the vehicle cools down. Never open the radiator cap as this can be dangerous. Once the vehicle is cooled, take the car to a mechanic right away so they can diagnose the problem."},'+
-  '{"ProblemType":"oil light","Tools":"Oil Reservoir","Procedure":"The engine has low oil pressure. You should check the oil level and add oil if you have some with you. Otherwise, have the vehicle towed to a repair shop. Driving a vehicle with low oil pressure can cause catastrophic engine damage and trust me, you do not want that."},'+
-  '{"ProblemType":"brake light","Tools":"Brake fluid","Procedure":"Check the operation of the brake pedal. If it feels spongy or goes to the floor, stop driving and have the vehicle towed to a service facility. If the pedal feels firm and the brakes stop the vehicle, check the brake fluid level in the reservoir. If it is low, add more brake fluid. If the light stays on after you have added fluid but the pedal is still firm, have the vehicle serviced as soon as possible."},'+
-  '{"ProblemType":"airbag light","Tools":"Functioning airbags","Procedure":"The airbags have shut down and will not work if you get into an accident. Get the vehicle serviced soon."},'+
-  '{"ProblemType":"traction control light","Tools":"","Procedure":"There is a problem with the system. You can still drive the vehicle, but exercise extra caution on slippery roads and in turns. Have the system serviced soon."},'+
-  '{"ProblemType":"check engine light","Tools":"Fuel pump","Procedure":"If the engine is running smoothly and the transmission is shifting properly, you can continue to drive the vehicle until you can get it checked by a mechanic. If it is flashing, pull over at the nearest safe spot. Have the vehicle towed to a repair shop immediately."},'+
-  '{"ProblemType":"charging system light","Tools":"Wrench","Procedure":"There is a major failure with the charging system. Drive immediately to the nearest repair shop."},'+
-  '{"ProblemType":"ABS light","Tools":"Brake fluids","Procedure":"There is a fault in the anti-lock brake system. You can drive the vehicle and operate the brakes. But, exercise more caution on slippery roads. Get the problem checked out soon."},'+
-  '{"ProblemType":"High Temperature","Tools":"Coolant","Procedure":"Pull over at the nearest safe spot and turn off the engine. Do not open the radiator or the coolant reservoir. Now, have the vehicle immediately towed to a repair shop. Driving an overheated vehicle can cause serious engine damage costing thousands of dollars to repair."}]}';
+      '{"ProblemType":"overheating","Tools":"First: you will need Engine oil, Next you will need Antifreeze, Awesome! Now get some Coolant, Wear a pair of Gloves","Procedure":"First, turn off the engine immediately and pop the car hood. Great, now let the engine cool down before taking any action. Okay, check the engine oil level using the dipstick and the cap, the oil should reach the notch marked full. Good job, finally check the coolant levels in the reservoir by the radiator. If the coolant reads low, it might be a leak. If there is a leak, take your car to a mechanic."},'+
+      '{"ProblemType":"stuck in the mud","Tools":"You will only need a Metallic lever for this", "Procedure":"First put the car in first gear and gently press the accelerator. Then, keep it at 15 miles per hour and allow the spinning wheels to rock the vehicle forward. You are doing good, take your foot off the accelerator and let the vehicle roll backwards and immediately put your foot on the accelerator to move the car forwards again. Now, keep doing this to gain enough momentum to rock the vehicle out of the mud. If it does not work, you will need towing."},'+
+      '{"ProblemType":"flat tire","Tools":"First: You will need a Lug wrench, Next: you require a Jack, Okay Make sure you have a Spare Tire, Get a Brick","Procedure":"First, park your car and make sure it isn’t moving. Don’t forget to engage your emergency brake. Okay, now place the brick behind the healthy tire opposite the dead one to keep the car from rolling. Good, now remove the hubcap, behind which you’ll see the lug nuts. Okay, Use your wrench to release them slightly, making sure to keep the nuts attached to your tires at this time. Now, when your car is secure and the lug nuts are exposed, situate your jack beneath the car body. Slowly, Lift your vehicle to reach the wheels, be carefull. Only once you’re ready to remove the flat tire should the lug nuts come off. Without these, you can easily get the wheel off the vehicle so you can replace it with a new one. Make sure that the old tire is on its side, then dispose of it. Very good, now put the new tire on the car and secure the lug nuts. Finally, once you release the jack and the car is on the ground, give the lug nuts a second look and maybe even another tightening with the wrench."},'+
+      '{"ProblemType":"dead battery","Tools":"First: You will need some Jumper cables, Find another car nearby","Procedure":"Keep cables intact and unbent at all times to prevent accidental shocks. Make sure that the second car parks with its front hood near your vehicle. Under each hood, you will find terminals marked negative and positive, typically denoted with a minus or plus sign. First make sure both vehicles are OFF. Connect the positive (typically red) cables to both positive terminals, starting with the dead battery first. Connect the negative (typically black) cable to the negative terminal on the battery of the car that is providing the jump. Connect the other end of the negative cable to an unpainted metal surface elsewhere under the hood of the car that is being jumped (but away from the battery). Let the battery charge for at least five minutes. After five minutes, see whether the car starts. If it doesn’t, let it charge for a few more minutes and try again. Once you can start the car without issue, make sure to retrieve all cables in this order: First, start with the grounded end of the negative cable clamped to the unpainted metal surface. Then, move on to the negative terminal of the car that provided the jump. Next, continue to the positive terminal of the car that provided the jump. Finally, end with the positive terminal of the car that received the jump."},'+
+      '{"ProblemType":"cracked windshield","Tools":"First: You require a Razor blade, Now get some curing strips, Resin or putty","Procedure":"First, very slowly drip resin into the cracked area on your windshield. Now, Dispense the resin extremely slowly (meaning about a drop every 3 seconds). Now, take a step back and look at the crack from multiple angles to see dark areas filling with the resin. Now, wait about 5 or 10 minutes and see if there are any air bubbles left in the crack. If there are, apply pressure to the inside of the windshield until all the bubbles are gone. Be carefull though, you do not want to make the crack worse. Just keep applying more resin and repeating this step until the crack is completely filled and contains no air bubbles. After you completed step 1, reapply more resin the crack while placing your curing strips on top of the crack while leaving no air under them. Once again, do not apply pressure to the strips just make sure they are completely covering the crack. Now, use your razor blade to remove any excess resin scraping at a right degree angle until all the excess resin is removed. After you are done applying the resin, curing strips and removing the excess resin, put the car directly in sun light to dry, it should take about 5 or 10 minutes. Finally, after the resin is dry, remove the strips and use your razor blade to remove any excess resin scraping at a 90 degree angle until all the excess resin is removed."},'+
+      '{"ProblemType":"difficulty accelerating","Tools":"You only need to check your Fuel Pressor Sensor","Procedure":"Just disconnect your fuel pressure sensor and try again"},'+
+      '{"ProblemType":"whining noise","Tools":"You only need to check your Fuel Pressor Sensor","Procedure":"Just disconnect your fuel pressure sensor and you are done"},'+
+      '{"ProblemType":"not starting","Tools":"You only need to check your Fuel Pressor Sensor","Procedure":"Just disconnect your fuel pressure sensor"},'+
+      '{"ProblemType":"tailpipe is smoking black","Tools":"You only some Spark Plugs","Procedure":"Warm up your car. Now, change the spark plugs. If there is still smoke, there is problem wit the fuel system. Have a mechanic look at it. "},'+
+      '{"ProblemType":"tailpipe is smoking blue","Tools":"Ouch I think you need a new PCV Valve","Procedure":"First, Replace the PCV valve, it is faulty. If the car is not turbocharged, the problem lies with the engine oil seals. You need a mechanic for this, mate."},'+
+      '{"ProblemType":"tailpipe is smoking white","Tools":"You only need a cylinder head gasket","Procedure":"First, Warm up your car. If coolant level does not reads low, it is just steam. Drive for 30 min and it should go away, else fill up your coolant reservoir and check the level again after a day. If it is still low, your cylinder head gasket is faulty and you should call a mechanic."},'+
+      '{"ProblemType":"stalling","Tools":"You need new air filters for this","Procedure":"First, Make sure your fuel and air filters are tight. You might want to change these out every so often to keep the fuel intake system healthy. Too much fluid there can cause stalling. Now, check for leaks underneath your car when you park it. If you see these, they’re likely attributed to your vacuum system. The fluid lines may have been punctured or they just may need to be tightened. If you notice the lines making a hissing sound while you are idling, it is an indication you may have a leak in your vacuum system."},'+
+      '{"ProblemType":"coolant reads low","Tools":"Check your car radiator","Procedure":"First, Shut off your air conditioner and open your windows immediately. If this does not cause the gauge to go down, turn on the heater as high as it can go. If this still is not working, pull over on the side of the road, open the hood carefully, and wait until the vehicle cools down. Never open the radiator cap as this can be dangerous. Once the vehicle is cooled, take the car to a mechanic right away so they can diagnose the problem."},'+
+      '{"ProblemType":"oil light","Tools":"You only need to check your Oil Reservoir","Procedure":"The engine has low oil pressure. You should check the oil level and add oil if you have some with you. Otherwise, have the vehicle towed to a repair shop. Driving a vehicle with low oil pressure can cause catastrophic engine damage and trust me, you do not want that."},'+
+      '{"ProblemType":"brake light","Tools":"Check your Brake fluid","Procedure":"Check the operation of the brake pedal. If it feels spongy or goes to the floor, stop driving and have the vehicle towed to a service facility. If the pedal feels firm and the brakes stop the vehicle, check the brake fluid level in the reservoir. If it is low, add more brake fluid. If the light stays on after you have added fluid but the pedal is still firm, have the vehicle serviced as soon as possible."},'+
+      '{"ProblemType":"airbag light","Tools":"Just check if you have Functioning airbags","Procedure":"The airbags have shut down and will not work if you get into an accident. Get the vehicle serviced soon."},'+
+      '{"ProblemType":"traction control light","Tools":"Just check your brake fluid level","Procedure":"There is a problem with the system. You can still drive the vehicle, but exercise extra caution on slippery roads and in turns. Have the system serviced soon."},'+
+      '{"ProblemType":"check engine light","Tools":"Check your Fuel pump","Procedure":"If the engine is running smoothly and the transmission is shifting properly, you can continue to drive the vehicle until you can get it checked by a mechanic. If it is flashing, pull over at the nearest safe spot. Have the vehicle towed to a repair shop immediately."},'+
+      '{"ProblemType":"charging system light","Tools":"You only need a Wrench for this","Procedure":"There is a major failure with the charging system. Drive immediately to the nearest repair shop."},'+
+      '{"ProblemType":"ABS light","Tools":"Check your Brake fluids","Procedure":"There is a fault in the anti-lock brake system. You can drive the vehicle and operate the brakes. But, exercise more caution on slippery roads. Get the problem checked out soon."},'+
+      '{"ProblemType":"High Temperature","Tools":"You only need a Coolant for this","Procedure":"Pull over at the nearest safe spot and turn off the engine. Do not open the radiator or the coolant reservoir. Now, have the vehicle immediately towed to a repair shop. Driving an overheated vehicle can cause serious engine damage costing thousands of dollars to repair."}]}';
+
+
+
+
 
 
   //var temp;
-  if(obj.result.action == "search")
+  if(obj.result.action == "search" && q!=1)
   {
     temp = obj.result.parameters["Problem-type"];
     console.log(obj.result.parameters["Problem-type"]);
@@ -151,6 +158,7 @@ function debugRespond(val) {
     obj1 = JSON.parse(text2);
     //console.log(obj1.Mechy[0].ProblemType);
     var i=0;
+    var j1=0;
     while(i<=20)
     {
       if(obj1.Mechy[i].ProblemType == temp)
@@ -163,18 +171,31 @@ function debugRespond(val) {
         }
         else
         {
-          respond("Found it. Displaying the tools");
+          respond("Found it. You can navigate the tools by saying next or repeat again. Displaying the tools.");
+          respond("     ");
           respond(obj1.Mechy[i].Tools.split(",",1));
           toolsEmpty=0;
+          q=1;
         }
+        j1=1;
       }
       i++;
-
-
     }
+    if(j1==0){
+    	respond("I'm sorry, I don't have the answer to that yet. Please speak the problem carefully!");
+    }
+
     //console.log(temp);
   }
-  if(obj.result.action == "toolsearch")
+  if(obj.result.action == "input.unknown" && q!=1){
+  	respond("I'm sorry, I don't have the answer to that yet. Please speak the problem carefully!");
+  }
+
+  if(obj.result.action == "input.unknown" && q==1){
+  	respond("You can navigate by saying next or repeat only.");
+  }
+
+  if(obj.result.action == "toolsearch" && q==1)
   {
     var tool = obj.result.parameters["ToolType"];
     var flag = 0;
@@ -186,6 +207,7 @@ function debugRespond(val) {
     //if()
     //{
     var i=0;
+    var j1=0;
     while(i<=20)
     {
       if(obj2.Mechy[i].ProblemType == temp)
@@ -217,6 +239,9 @@ function debugRespond(val) {
             if(values[k]!= undefined)
             {
             respond(values[k]);
+            if(k == values.length-1){
+            	//respond("Say next to start with procedures.");
+            }
             console.log(values[k]);
             //k++;
             }
@@ -229,10 +254,14 @@ function debugRespond(val) {
               respond(values[k]);
             }
           }
+          j1=1;
         //}
       }
       i++;
     }
+     if(j1==0){
+  	respond("You can navigate by saying next or repeat only.");
+  }
     //}
     //console.log(values[k]);
 
@@ -245,6 +274,7 @@ function debugRespond(val) {
     //{
 
       var m=0;
+      var m1=0;
       console.log("Entered")
       while(m<=20)
       {
@@ -274,9 +304,15 @@ function debugRespond(val) {
             respond(values1[j]);
           }
           }
+          m=1;
         }
         m++;
+
       }
+if(j1==0){
+  	respond("You can navigate procedure by saying next or repeat only.");
+  }
+
       if(j == values1.length-2)
       {
         respond("That's all. You did awesome. Have a great rest of the journey");
@@ -419,14 +455,14 @@ function respond(val)
       <div class="spoken-response__text"></div>
     </div>
   </div>
-  <!--<div class="debug">
+  <div class="debug">
     <div class="debug__btn btn">
       JSON results
     </div>
     <div class="debug__content">
       <textarea id="response" cols="40" rows="20"></textarea>
     </div>
-  </div>-->
+  </div>
 
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200" rel="stylesheet" type="text/css">
  <p>
