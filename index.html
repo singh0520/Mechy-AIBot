@@ -44,7 +44,6 @@
       };
       recognition.onresult = function(event) {
         recognition.onend = null;
-
         var text = "";
           for (var i = event.resultIndex; i < event.results.length; ++i) {
             text += event.results[i][0].transcript;
@@ -59,7 +58,6 @@
       recognition.lang = "en-US";
       recognition.start();
     }
-
     function stopRecognition() {
       if (recognition) {
         recognition.stop();
@@ -103,10 +101,7 @@
       });
     }
     function prepareResponse(val) {
-
   var debugJSON = JSON.stringify(val, undefined, 2);
-
-
 debugRespond(debugJSON);
 }
 var temp;
@@ -117,10 +112,9 @@ var l=1;
 var toolsEmpty=0;
 var finishedTraversing;
 function debugRespond(val) {
-  
+
   $("#response").text(val);
   obj = JSON.parse(val);
-
   var text2 = '{"Mechy":[' +
       '{"ProblemType":"overheating","Tools":"First: you will need Engine oil, Next you will need Antifreeze, Awesome! Now get some Coolant, Wear a pair of Gloves","Procedure":"First, turn off the engine immediately and pop the car hood. Great, now let the engine cool down before taking any action. Okay, check the engine oil level using the dipstick and the cap, the oil should reach the notch marked full. Good job, finally check the coolant levels in the reservoir by the radiator. If the coolant reads low, it might be a leak. If there is a leak, take your car to a mechanic."},'+
       '{"ProblemType":"stuck in the mud","Tools":"You will only need a Metallic lever for this", "Procedure":"First put the car in first gear and gently press the accelerator. Then, keep it at 15 miles per hour and allow the spinning wheels to rock the vehicle forward. You are doing good, take your foot off the accelerator and let the vehicle roll backwards and immediately put your foot on the accelerator to move the car forwards again. Now, keep doing this to gain enough momentum to rock the vehicle out of the mud. If it does not work, you will need towing."},'+
@@ -134,7 +128,7 @@ function debugRespond(val) {
       '{"ProblemType":"tailpipe is smoking blue","Tools":"Ouch I think you need a new PCV Valve","Procedure":"First, Replace the PCV valve, it is faulty. If the car is not turbocharged, the problem lies with the engine oil seals. You need a mechanic for this, mate."},'+
       '{"ProblemType":"tailpipe is smoking white","Tools":"You only need a cylinder head gasket","Procedure":"First, Warm up your car. If coolant level does not reads low, it is just steam. Drive for 30 min and it should go away, else fill up your coolant reservoir and check the level again after a day. If it is still low, your cylinder head gasket is faulty and you should call a mechanic."},'+
       '{"ProblemType":"stalling","Tools":"You need new air filters for this","Procedure":"First, Make sure your fuel and air filters are tight. You might want to change these out every so often to keep the fuel intake system healthy. Too much fluid there can cause stalling. Now, check for leaks underneath your car when you park it. If you see these, they’re likely attributed to your vacuum system. The fluid lines may have been punctured or they just may need to be tightened. If you notice the lines making a hissing sound while you are idling, it is an indication you may have a leak in your vacuum system."},'+
-      '{"ProblemType":"coolant reads low","Tools":"Check your car radiator","Procedure":"First, Shut off your air conditioner and open your windows immediately. If this does not cause the gauge to go down, turn on the heater as high as it can go. If this still is not working, pull over on the side of the road, open the hood carefully, and wait until the vehicle cools down. Never open the radiator cap as this can be dangerous. Once the vehicle is cooled, take the car to a mechanic right away so they can diagnose the problem."},'+
+      '{"ProblemType":"cooler reads low","Tools":"Check your car radiator","Procedure":"First, Shut off your air conditioner and open your windows immediately. If this does not cause the gauge to go down, turn on the heater as high as it can go. If this still is not working, pull over on the side of the road, open the hood carefully, and wait until the vehicle cools down. Never open the radiator cap as this can be dangerous. Once the vehicle is cooled, take the car to a mechanic right away so they can diagnose the problem."},'+
       '{"ProblemType":"oil light","Tools":"You only need to check your Oil Reservoir","Procedure":"The engine has low oil pressure. You should check the oil level and add oil if you have some with you. Otherwise, have the vehicle towed to a repair shop. Driving a vehicle with low oil pressure can cause catastrophic engine damage and trust me, you do not want that."},'+
       '{"ProblemType":"brake light","Tools":"Check your Brake fluid","Procedure":"Check the operation of the brake pedal. If it feels spongy or goes to the floor, stop driving and have the vehicle towed to a service facility. If the pedal feels firm and the brakes stop the vehicle, check the brake fluid level in the reservoir. If it is low, add more brake fluid. If the light stays on after you have added fluid but the pedal is still firm, have the vehicle serviced as soon as possible."},'+
       '{"ProblemType":"airbag light","Tools":"Just check if you have Functioning airbags","Procedure":"The airbags have shut down and will not work if you get into an accident. Get the vehicle serviced soon."},'+
@@ -143,18 +137,11 @@ function debugRespond(val) {
       '{"ProblemType":"charging system light","Tools":"You only need a Wrench for this","Procedure":"There is a major failure with the charging system. Drive immediately to the nearest repair shop."},'+
       '{"ProblemType":"ABS light","Tools":"Check your Brake fluids","Procedure":"There is a fault in the anti-lock brake system. You can drive the vehicle and operate the brakes. But, exercise more caution on slippery roads. Get the problem checked out soon."},'+
       '{"ProblemType":"High Temperature","Tools":"You only need a Coolant for this","Procedure":"Pull over at the nearest safe spot and turn off the engine. Do not open the radiator or the coolant reservoir. Now, have the vehicle immediately towed to a repair shop. Driving an overheated vehicle can cause serious engine damage costing thousands of dollars to repair."}]}';
-
-
-
-
-
-
   //var temp;
   if(obj.result.action == "search" && q!=1)
   {
     temp = obj.result.parameters["Problem-type"];
     console.log(obj.result.parameters["Problem-type"]);
-
     obj1 = JSON.parse(text2);
     //console.log(obj1.Mechy[0].ProblemType);
     var i=0;
@@ -184,17 +171,18 @@ function debugRespond(val) {
     if(j1==0){
     	respond("I'm sorry, I don't have the answer to that yet. Please speak the problem carefully!");
     }
-
     //console.log(temp);
   }
-  if(obj.result.action == "input.unknown" && q!=1){
+  if(obj.result.action == "search" && obj.result.parameters["Problem-type"]=="" && q!=1)
+    respond("I'm sorry, I don't have the answer to that yet. Please speak the problem carefully!")
+  else if(obj.result.action == "input.unknown" && q!=1){
   	respond("I'm sorry, I don't have the answer to that yet. Please speak the problem carefully!");
   }
-
-  if(obj.result.action == "input.unknown" && q==1){
+  if(obj.result.action == "search" && obj.result.parameters["Problem-type"]=="" && q==1)
+    respond("You can navigate by saying next or repeat only.")
+  else if(obj.result.action == "input.unknown" && q==1){
   	respond("You can navigate by saying next or repeat only.");
   }
-
   if(obj.result.action == "toolsearch" && q==1)
   {
     var tool = obj.result.parameters["ToolType"];
@@ -212,21 +200,18 @@ function debugRespond(val) {
     {
       if(obj2.Mechy[i].ProblemType == temp)
       {
-
         /*
         if(obj2.Mechy[i].Tools == "" && finishedTraversing==0)
         {
           //respond("Okay. You don't need any tools for this. Moving on to the procedure.");
           k=0;
           //values[k]= undefined;
-
           respond(obj2.Mechy[i].Procedure.split(".",1));
           console.log(obj2.Mechy[i].Procedure.split(".",1));
         }
         */
         //else
         //{
-
           if(tool == "next" && finishedTraversing == 0 && toolsEmpty==0)
           {
             console.log("Entered next");
@@ -264,7 +249,6 @@ function debugRespond(val) {
   }
     //}
     //console.log(values[k]);
-
     if(k == values.length)
     {
       finishedTraversing = 1;
@@ -272,7 +256,6 @@ function debugRespond(val) {
     }
     //if(finishedTraversing==1)
     //{
-
       var m=0;
       var m1=0;
       console.log("Entered")
@@ -282,7 +265,6 @@ function debugRespond(val) {
         {
           if(tool == "next")
           {
-
             if(values[k]==undefined || obj2.Mechy[m].Tools == "")
             {
             j++;
@@ -307,12 +289,10 @@ function debugRespond(val) {
           m=1;
         }
         m++;
-
       }
 if(j1==0){
   	respond("You can navigate procedure by saying next or repeat only.");
   }
-
       if(j == values1.length-2)
       {
         respond("That's all. You did awesome. Have a great rest of the journey");
@@ -320,7 +300,6 @@ if(j1==0){
     //}
   }
 }
-
 function respond(val)
 {
   if (val == "") {
@@ -426,9 +405,7 @@ function respond(val)
       color: #7584A2;
       padding: 1em;
     }
-
 	h1 { color: #002f4c; font-family: 'Righteous', Bold; font-size: 65px; font-weight: normal; line-height: 60px; margin: 10px 0 20px; text-transform: uppercase; text-shadow: 2px 2px 0 #000, margin: 10px 0 24px; text-align: center; }
-
    p{
       bottom: 0;
       position: fixed;
@@ -442,7 +419,6 @@ function respond(val)
       padding: 0 0.75em;
       width: 400px;
       -webkit-transition: all 0.35s ease-in;}
-
   </style>
 </head>
 <body>
@@ -473,4 +449,3 @@ Navigate the tools and procedures by saying "Next" or "Please Repeat".
 </p>
 
 </body>
-</html>
