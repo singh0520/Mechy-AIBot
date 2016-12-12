@@ -105,6 +105,7 @@
 debugRespond(debugJSON);
 }
 var q;
+var q1;
 var p;
 var temp;
 var k=0;
@@ -280,6 +281,9 @@ function debugRespond(val) {
       console.log("Entered")
       while(m<=20)
       {
+        if(q1==1){
+          q1++;
+        }
         if(obj2.Mechy[m].ProblemType == temp)
         {
           if(tool == "next")
@@ -288,11 +292,24 @@ function debugRespond(val) {
             {
             j++;
             var values1 = obj2.Mechy[m].Procedure.split(".");
-            //if(values[k]== undefined)
-            //{
+            //var nik = values1.length;
+           if(q1!=1 && q1 != 2){
             respond(values1[j]);
             console.log(j);
+            console.log(values1.length);
             console.log(values1[j]);
+          }
+
+            if(j == values1.length-2){
+              q1=1;
+              //sleep(5000);
+            }
+
+            if(q1 == 2){
+              respond("That's all. You did awesome. Have a great rest of the journey");
+              setTimeout(refresh, 2500);
+            }
+            
             //j++;
             //}
           }
@@ -314,13 +331,40 @@ function debugRespond(val) {
         }
         m++;
       }
-      if(j == values1.length-2)
+      /*if(j==values1.length-2)
       {
+        sleep(5000);
         respond("That's all. You did awesome. Have a great rest of the journey");
-      }
+        setTimeout(refresh, 4000);
+        //refresh();
+      }*/
     //}
   }
 }
+
+/*function dummy(){
+  var i;
+  i=i+1;
+}*/
+
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+function refresh() {
+
+    setTimeout(function () {
+        location.reload()
+    }, 4000);
+}
+
+
 function respond(val)
 {
   if (val == "") {
