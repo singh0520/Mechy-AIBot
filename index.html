@@ -117,11 +117,6 @@ function debugRespond(val) {
   //$("#response").text(val);
   //$("#response").append("kjbkjb");
   obj = JSON.parse(val);
-
-
-
-
-
   var text2 = '{"Mechy":[' +
       '{"ProblemType":"overheating","Tools":"First: you will need Engine oil, Next you will need Antifreeze, Awesome! Now get some Coolant, Wear a pair of Gloves","Procedure":"First, turn off the engine immediately and pop the car hood. Great, now let the engine cool down before taking any action. Okay, check the engine oil level using the dipstick and the cap, the oil should reach the notch marked full. Good job, finally check the coolant levels in the reservoir by the radiator. If the coolant reads low, it might be a leak. If there is a leak, take your car to a mechanic."},'+
       '{"ProblemType":"stuck in the mud","Tools":"You will only need a Metallic lever for this", "Procedure":"First put the car in first gear and gently press the accelerator. Then, keep it at 15 miles per hour and allow the spinning wheels to rock the vehicle forward. You are doing good, take your foot off the accelerator and let the vehicle roll backwards and immediately put your foot on the accelerator to move the car forwards again. Now, keep doing this to gain enough momentum to rock the vehicle out of the mud. If it does not work, you will need towing."},'+
@@ -144,10 +139,6 @@ function debugRespond(val) {
       '{"ProblemType":"charging system light","Tools":"You only need a Wrench for this","Procedure":"There is a major failure with the charging system. Drive immediately to the nearest repair shop."},'+
       '{"ProblemType":"ABS light","Tools":"Check your Brake fluids","Procedure":"There is a fault in the anti-lock brake system. You can drive the vehicle and operate the brakes. But, exercise more caution on slippery roads. Get the problem checked out soon."},'+
       '{"ProblemType":"High Temperature","Tools":"You only need a Coolant for this","Procedure":"Pull over at the nearest safe spot and turn off the engine. Do not open the radiator or the coolant reservoir. Now, have the vehicle immediately towed to a repair shop. Driving an overheated vehicle can cause serious engine damage costing thousands of dollars to repair."}]}';
-
-
-
-
   if(obj.result.action == "search" && q!=1)
   {
     temp = obj.result.parameters["Problem-type"];
@@ -178,30 +169,20 @@ function debugRespond(val) {
       i++;
     } }
 
-    
     else{
-      respond("I'm sorry, I don't have the answer to that yet. Please speak the problem carefully!");
-
+      respond("I'm sorry, I don't have the answer to that yet. Please press 'Speak' and speak the problem carefully!");
     }
     //console.log(temp);
   }
-
     if(obj.result.action == "input.unknown" && q!=1){
-            respond("I'm sorry, I don't have the answer to that yet. Please speak the problem carefully");
-
-
+            respond("I'm sorry, I don't have the answer to that yet. Please press 'Speak' and speak the problem carefully");
     }
-
     if(obj.result.action == "search" && p!=1){
-      respond("You can navigate by saying next or repeat only.");
+      respond("You can navigate by pressing 'Speak' and saying next or repeat only.");
     }
-
     if(obj.result.action == "input.unknown" && q==1){
-            respond("You can navigate by saying next or repeat only.");
-
+            respond("You can navigate by pressing 'Speak' and saying next or repeat only.");
     }
- 
-
 
   if(obj.result.action == "toolsearch" && q==1)
   {
@@ -249,7 +230,7 @@ function debugRespond(val) {
             }
             //respond("   ");
             if(k == values.length-1){
-              respond("Say next to start with procedures.");
+              respond("Press 'Speak' and say next to start with procedures.");
             }
           }
           else if(tool == "repeat" && finishedTraversing == 0 && toolsEmpty==0)
@@ -262,7 +243,7 @@ function debugRespond(val) {
           }
           else{
             console.log("nikhil");
-            respond("You can navigate by saying next or repeat only.");
+            respond("You can navigate by pressing 'Speak' and saying next or repeat only.");
           }
         //}
       }
@@ -299,22 +280,19 @@ function debugRespond(val) {
             console.log(values1.length);
             console.log(values1[j]);
           }
-
             if(j == values1.length-2){
               q1=1;
               //sleep(5000);
             }
-
             if(q1 == 2){
               respond("That's all. You did awesome. Have a great rest of the journey");
               setTimeout(refresh, 2500);
             }
-            
+
             //j++;
             //}
           }
           }
-
           else if(tool == "repeat")
           {
             if(values[k]==undefined || obj2.Mechy[m].Tools == "")
@@ -323,10 +301,9 @@ function debugRespond(val) {
             respond(values1[j]);
           }
           }
-
           else{
             console.log("proc");
-            respond("You can navigate by saying next or repeat only.");
+            respond("You can navigate by pressing 'Speak' and saying next or repeat only.");
           }
         }
         m++;
@@ -341,13 +318,10 @@ function debugRespond(val) {
     //}
   }
 }
-
 /*function dummy(){
   var i;
   i=i+1;
 }*/
-
-
 function sleep(milliseconds) {
   var start = new Date().getTime();
   for (var i = 0; i < 1e7; i++) {
@@ -356,15 +330,11 @@ function sleep(milliseconds) {
     }
   }
 }
-
 function refresh() {
-
     setTimeout(function () {
         location.reload()
     }, 4000);
 }
-
-
 function respond(val)
 {
   if (val == "") {
